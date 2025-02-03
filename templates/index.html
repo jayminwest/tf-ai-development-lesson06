@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{# @fileoverview Main page template for Wikipedia article fetching and analysis #}
+
+{% block title %}Home - Wikipedia Fetcher{% endblock %}
+
+{% block content %}
+<h1>Wikipedia Article Fetcher</h1>
+<form id="article-form">
+    <input type="text" name="article_title" placeholder="Enter Wikipedia article title" required>
+    <button type="button" id="fetch-article">Fetch Article</button>
+</form>
+<div id="article-content" style="display: none;">
+    <h2 id="article-title"></h2>
+    <div id="raw-text"></div>
+    <button type="button" id="analyze-article">Analyze Article</button>
+    <div id="analysis-results"></div>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}
